@@ -1,8 +1,8 @@
 package main
 
 import (
-	"erc20_score/erc20_score_backend/src/controller/middleware"
 	"fmt"
+	middleware "github.com/zhuruiIcarbonx/erc20_score/erc20_score_backend/src/controller/middleware"
 )
 
 func main() {
