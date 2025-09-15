@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	middleware "github.com/zhuruiIcarbonx/erc20_score/erc20_score_backend/src/controller/middleware"
+	"github.com/zhuruiIcarbonx/erc20_score/erc20_score_backend/src/controller/middleware"
 )
 
-func main() {
+var log = middleware.initLogger()
 
-	log := middleware.initLogger()
+func main() {
 
 	fmt.Println("hello world")
 }

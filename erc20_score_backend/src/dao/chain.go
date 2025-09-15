@@ -1,6 +1,7 @@
 package dao
 
 import (
+	"log"
 	"time"
 
 	"gorm.io/gorm"
@@ -31,7 +32,7 @@ func GetOne(db *gorm.DB, chainId string) Chain {
 
 	record := Chain{}
 	db.Debug().Where("chain_id = ?", chainId).First(&record)
-	logger.Log.Printf("[Getone]record:%v", record)
+	log.Printf("[Getone]record:%v", record)
 	return record
 
 }

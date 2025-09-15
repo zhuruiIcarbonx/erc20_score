@@ -4,6 +4,6 @@ database:
   port: 3306
   user: root
   password: 123456zz
-  name: blog
+  name: erc20
 userpassword:
   key: 32$%&cCZ
