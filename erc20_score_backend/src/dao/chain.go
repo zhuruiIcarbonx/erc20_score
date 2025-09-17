@@ -1,8 +1,9 @@
 package dao
 
 import (
-	"log"
 	"time"
+
+	"github.com/zhuruiIcarbonx/erc20_score/erc20_score_backend/src/logger"
 
 	"gorm.io/gorm"
 )
@@ -28,11 +29,25 @@ func ChainCreate(db *gorm.DB, chain *Chain) error {
 
 }
 
-func GetOne(db *gorm.DB, chainId string) Chain {
+func ChainUpdate(db *gorm.DB, chain *Chain) error {
+
+	err := db.Debug().Model(Chain{}).Where("id = ?", chain.ID).Updates(chain).Error
+	return err
+
+}
+
+func ChainUpdateSynedBlockNum(db *gorm.DB, chainId string, synedBlockNum uint) error {
+
+	err := db.Debug().Model(Chain{}).Where("id = ?", chainId).Updates(Chain{SynedBlockNum: synedBlockNum}).Error
+	return err
+
+}
+
+func ChainGetOne(db *gorm.DB, chainId string) Chain {
 
 	record := Chain{}
 	db.Debug().Where("chain_id = ?", chainId).First(&record)
-	log.Printf("[Getone]record:%v", record)
+	logger.Log.Printf("[Getone]record:%v", record)
 	return record
 
 }

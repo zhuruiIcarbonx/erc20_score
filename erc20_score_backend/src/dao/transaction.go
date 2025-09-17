@@ -14,6 +14,9 @@ type Transaction struct {
 	ToAccount   string    `gorm:"column:to_account"`
 	Amount      uint      `gorm:"column:amount"`
 	Type        uint      `gorm:"column:type"`
+	TxHash      string    `gorm:"column:tx_hash"`
+	BlockNum    uint      `gorm:"column:block_num"`
+	BlockTime   uint      `gorm:"column:block_time"`
 }
 
 func (Transaction) TableName() string {
