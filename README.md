@@ -19,3 +19,37 @@
     比如此时是16：00启动定时任务了来计算积分，应该是100*0.05*20/60+200*0.05*30/60
     
 ```
+
+
+# 2、项目结构和说明
+## 2.1 erc20_score_contract 合约项目
+
+    合约项目中主要有两块内容：
+    1、合约文件：erc20_score_contract/contracts/MyERC20.sol
+      该合约可以通过配置部署到local、sepolia、base sepolia等链
+      
+    2、合约测试文件：erc20_score_contract/test/01_test.js
+      执行该文件可以部署合约到链上，并且，该文件代码中生成了10个用户账号，通过代码中的定时任务将使用这10个账号的
+      进行mint、burn、tranfer操作，模拟用户的在区块链上操作，生成区块交易数据。
+      合约测试文件第七行代码为：let cycle_number = 60;
+      修改cycle_number的值，可以配置交易笔数。
+
+
+
+## 2.2 erc20_score_backend 后台项目
+
+   
+   
+       
+       1、.log目录用于存放日志
+       2、config目录存放配置文件和数据库sql
+       3、src目录存放业务代码：
+          src\config 用于读取和解析配置文件
+    	  src\controller 用于实现api、router、middleware
+    	  src\service 用于实现业务逻辑处理
+    	  src\dao  用于实现数据库连接、数据持久化和数据库模型定义
+    	  src\model 用于存放数据模型，包括请求参数和返回参数
+    	  src\uitil 用于存放项目工具相关方法
+          main.go  项目启动文件
+    	  
+
