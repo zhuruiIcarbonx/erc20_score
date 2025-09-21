@@ -84,8 +84,9 @@
     	
 	
 # 4、思考问题解决
-考虑一个场景，如果程序错误了，或者rpc有问题，导致好几天没有计算积分。此时应该如何正确回溯？
-    答：调用“历史积分计算”接口，输入参数，即可将chainId所在链从fromHour到toHour的历史积分重新计算一遍：
+    考虑一个场景，如果程序错误了，或者rpc有问题，导致好几天没有计算积分。此时应该如何正确回溯？
+    答：调用“历史积分计算”接口，输入参数，即可将chainId所在链
+    从fromHour到toHour的历史积分重新计算一遍：
     接口路径：/erc20/v1/score/calculate
     请求方式： POST  
     content-type: application/json
@@ -101,4 +102,5 @@
       "message"："success",
       "time"："2025-09-21 18:00:01",
     }
+	
 
