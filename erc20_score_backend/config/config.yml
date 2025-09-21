@@ -1,0 +1,18 @@
+port: 8080
+database:
+  host: 127.0.0.1
+  port: 3306
+  user: root
+  password: 123456zz
+  name: erc20_score
+userpassword:
+  key: 32$%&cCZ
+blocakchain:
+  chain1:
+    erc20_address: 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
+    key_url: http://localhost:8545
+    chain_id: 31337_1
+  chain2:
+    erc20_address: 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
+    key_url: http://192.168.1.106:8545
+    chain_id: 31337_2
